@@ -13,11 +13,11 @@ public class Bank {
             choice = scanner.nextInt();
             if (choice == 0){
                 System.out.println("quanti soldi vuoi depositare?");
-                account.addMoney(scanner.nextDouble());
+                account.addMoney(scanner.nextBigDecimal());
                 System.out.println("Importo aggiornato: " + account.getBalance());
             }else if(choice == 2){
                 System.out.println("quanti soldi vuoi prelevare?");
-                account.removeMoney(scanner.nextDouble());
+                account.removeMoney(scanner.nextBigDecimal());
                 System.out.println("Importo aggiornato: " + account.getBalance());
             }else if(choice != 0 && choice != 1 && choice != 2){
                 System.out.println("hai inserito un valore non valido...riprova");

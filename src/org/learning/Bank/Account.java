@@ -1,9 +1,11 @@
 package org.learning.Bank;
 
+import java.math.BigDecimal;
+
 public class Account {
     private int codeAccount;
     private String name;
-    private double balance=0.0;
+    private BigDecimal balance=BigDecimal.ZERO;
 
     public Account(String name){
         setName(name);
@@ -18,7 +20,7 @@ public class Account {
         return name;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
@@ -26,14 +28,16 @@ public class Account {
         this.name = name;
     }
 
-    public void addMoney(double money){
-        balance += money;
+    public void addMoney(BigDecimal money){
+        balance = balance.add(money);
+
     }
 
-    public void removeMoney(double money){
-        if(money <= balance) {
-            balance -= money;
-            System.out.println("Prelievo effettuato corretttamente");
+    public void removeMoney(BigDecimal money){
+
+        if(money.compareTo(balance)<=0) {
+            balance=balance.subtract(money);
+            System.out.println("Prelievo effettuato correttamente");
         }else{
             System.out.println("L'importo che si vuole prelevare è maggiore del saldo..prelievo annullato");
         }
