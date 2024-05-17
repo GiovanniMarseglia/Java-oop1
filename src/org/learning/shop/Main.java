@@ -20,6 +20,6 @@ public class Main {
         System.out.println("Iva: " + product.getIva());
         System.out.println("Prezzo comprensivo di iva: " + product.getPriceWithIva());
         System.out.println("Nome completo: " + product.getFullName());
-
+        scanner.close();
     }
 }
